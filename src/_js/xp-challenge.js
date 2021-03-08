@@ -169,8 +169,6 @@
                 }).then(function(data) {
                     history.pushState({track: id}, id, `?track=${id}`);
 
-                    console.log(data);
-
                     data.items.forEach(_ => {
                         _.duration_ms = PRIVATE.millisToMinutesAndSeconds(_.duration_ms)
                     });

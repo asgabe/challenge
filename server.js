@@ -14,7 +14,7 @@ const HOST = '127.0.0.1';
 const stateKey = 'spotify_auth_state';
 const client_id = '56da7acff2b54806b296c50b7df74049';
 const client_secret = 'e1fbd157c2d34e1db672019bf2990e33';
-const redirect_uri = 'http://localhost:8080/callback';
+const redirect_uri = 'http://127.0.0.1:8080/callback';
 
 app.listen(PORT, HOST);
 

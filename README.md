@@ -1,11 +1,13 @@
-# XP Challenge
+# About
 
-Initial documentation description
-
+Is a simple challenge with spotify API
 
 ## Getting starter
 
 ```bash
-$ npm install
-$ npm run build
+$ npm start
+
+## Running on 127.0.0.1:8080
 ```
+
+
