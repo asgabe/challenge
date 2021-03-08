@@ -6,6 +6,7 @@ node_modules/
 # development files
 
 .Trash-1000
+.package-lock.json
 npm-shrinkwrap.json
 
 # linters
