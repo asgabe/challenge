@@ -1,0 +1,31 @@
+<section class="spotify">
+    <div class="content">
+        <div class="icon">
+            <a href="/"><img src="_img/spotify.svg" alt="Spotify"></a>
+        </div>
+
+        <div class="page">
+            <div class="search">
+                <span>Search for Artists, Albums or Music</span>
+                <input type="text" placeholder="Search for...">
+            </div>
+
+            {{#if albums }}
+                <h2 class="msg">{{message}}</h2>
+
+                <ul class="albums">
+                    {{#each albums }}
+                        <li class="album">
+                            <a href="javascript:void(0)" class="album-img">
+                                <img src="{{album.images.[0].url}}" data-artist="{{artists.[0].name}}" data-album="{{name}}" data-id="{{album.id}}">
+                            </a>
+
+                            <span class="album-name">{{name}}</span>
+                            <span class="album-artist">{{artists.[0].name}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+    </div>
+</section>

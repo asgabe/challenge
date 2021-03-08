@@ -1,0 +1,97 @@
+/**
+ * ====================================================
+ *              This file contains all
+ *           application-wide Sass @MIXINS.
+ * ====================================================
+**/
+
+/// @param {String} $property
+/// @param {*} $value
+/// @example @include root-prop(--azc-brand, #F3652B);
+@mixin root-prop($prop: null, $value: null) {
+    @if ($prop and $value) {
+        #{$prop}: $value;
+    }
+}
+
+/// @param {String} $property - Unprefixed CSS property
+/// @param {*} $value - Raw CSS value
+/// @example @include prefix(transform, rotate(90deg), ('webkit', 'ms'));
+@mixin prefix($property, $value, $prefixes: ('webkit', 'moz')) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+
+    #{$property}: $value;
+}
+
+/// @param {String} $property
+@mixin transition($property: false) {
+    @if $property {
+        @include prefix(transition, $property);
+    } @else {
+        @include prefix(transition, all .2s ease-in-out);
+    }
+}
+
+/// @param {Bool} $self [false] - Whether or not to include current selector
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:focus,
+        &:hover,
+        &:active {
+            @content;
+        }
+    } @else {
+        &:focus,
+        &:hover,
+        &:active {
+            @content;
+        }
+    }
+}
+
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+/// @param {Length} $width
+/// @param {Length} $height
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+/// @require $weights
+/// @param {String} $font
+/// @param {String} $weight
+/// @param {String} $style
+@mixin font($font: $text-font-primary, $weight: 'regular', $style: normal) {
+    @if not map-has-key($weights, $weight) {
+        @error 'There is no weight named `#{$weight}` in $weights. Weight should be one of #{map-keys($weights)}.';
+    }
+
+    font-style: $style;
+    font-family: $font;
+    font-weight: map-get($weights, $weight);
+}
+
+/// @requires $breakpoints
+/// @param {String} $breakpoint - Breakpoint
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+        $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+        @media screen and (min-width: #{$query}) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+    }
+}

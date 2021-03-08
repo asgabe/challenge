@@ -1,0 +1,29 @@
+.content {
+    margin: 0 auto;
+    padding: 0 16px;
+    position: relative;
+    width: $mq-breakpoint-xsmall;
+    min-width: $mq-breakpoint-xsmall;
+
+    @include transition;
+
+    @include respond-to('small') {
+        width: $mq-breakpoint-small;
+    }
+
+    @include respond-to('medium') {
+        width: $mq-breakpoint-medium;
+
+    }
+
+    @include respond-to('large') {
+        padding: 0 30px;
+        width: $mq-breakpoint-large;
+
+    }
+
+    @include respond-to('x-large') {
+        padding: 0 30px;
+        width: $mq-breakpoint-xlarge;
+    }
+}

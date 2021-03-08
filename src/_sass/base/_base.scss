@@ -1,0 +1,26 @@
+html {
+    font-size: $baseline;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+p,
+ul[class],
+ol[class] {
+    margin: 0;
+    padding: 0;
+}
+
+ul li,
+ol li {
+    list-style: none;
+}
