@@ -1,0 +1,37 @@
+<section class="spotify">
+    <div class="content">
+        <div class="icon">
+            <a href="/"><img src="_img/spotify.svg" alt="Spotify"></a>
+        </div>
+        <div class="breadcrumb">
+            <div class="arrow">
+                <div class="link"><img src="_img/arrow.svg" alt="Arrow"> Back</div>
+                <div class="sound-track"></div>
+            </div>
+        </div>
+        <div class="page p-tracks">
+            {{#if tracks }}
+                <div class="t-album">
+                    <img src="{{album.img}}" alt="{{album.album}}">
+                    <p>{{album.album}}</p>
+                    <p class="art">{{album.artist}}</p>
+                </div>
+                <ul class="tracks">
+                    {{#each tracks }}
+                        <li class="tracks-item">
+                            <span class="track-name">{{name}}</span>
+                            <audio style="display: none" src="{{preview_url}}"></audio>
+                            <span class="track-name">{{duration_ms}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+    </div>
+</section>
+
+<div id='bars'>
+    {{#times 200}}
+        <div class='bar'></div>
+    {{/times}}
+</div>

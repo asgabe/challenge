@@ -1,0 +1,118 @@
+/**
+ * ====================================================
+ *              This file contains all
+ *          application-wide Sass @VARIABLES.
+ * ====================================================
+**/
+
+
+/**
+ * @type Color
+ *
+ * Root colors of the system
+**/
+
+$color-black           : var(--azc-black, #000000);
+$color-white           : var(--azc-white, #FFFFFF);
+$color-dove-gray       : var(--azc-dove-gray, #646464);
+$color-gray            : var(--azc-gray, #888888);
+$color-silver          : var(--azc-silver, #C8C8C8);
+$color-silver-chalice  : var(--azc-silver-chalice, #B1B1B1);
+$color-light-silver    : var(--azc-light-silver, #DFDFDF);
+$color-gallery         : var(--azc-gallery, #EBEBEB);
+$color-alabaster       : var(--azc-alabaster, #F7F7F7);
+$color-alabaster-solid : var(--azc-alabaster-solid, #FAFAFA);
+$color-alabaster-approx: var(--azc-alabaster-approx, #FCFCFC);
+$color-surface         : var(--azc-surface, #FFFFFF);
+$color-primary         : var(--azc-primary, #F3652B);
+$color-secondary       : var(--azc-secondary, #1E1E1E);
+$color-error           : var(--azc-error, #FF4141);
+$color-success         : var(--azc-success, #8BC249);
+$color-warning         : var(--azc-warning, #FEC111);
+$color-on-error        : var(--azc-on-error, #C83030);
+$color-on-surface      : var(--azc-on-surface, #FFFFFF);
+$color-on-primary      : var(--azc-on-primary, #DA4F2B);
+$color-on-secondary    : var(--azc-on-secondary, #1E1E1E);
+$color-rose-bud        : var(--azc-rose-bud, #F9B295);
+$color-boulder         : var(--azc-boulder, #777777);
+
+/**
+ * @type Size
+ * Baseline for font-size
+ *
+ *
+ * @type String
+ * Relative or absolute URL where all assets are served from
+**/
+
+$base-url: './';
+$baseline: var(--azf-text-baseline, 10px);
+
+$header-height: 60px;
+$footer-height: 200px;
+$viewport: calc(100vh - #{$header-height} - #{$footer-height});
+
+/**
+ * @type Length
+ *
+ * Contents's maximum width
+**/
+
+$mq-breakpoint-xsmall : var(--azmq-breakpoint-xsmall, 320px);
+$mq-breakpoint-small  : var(--azmq-breakpoint-small, 425px);
+$mq-breakpoint-medium : var(--azmq-breakpoint-medium, 768px);
+$mq-breakpoint-large  : var(--azmq-breakpoint-large, 1024px);
+$mq-breakpoint-xlarge : var(--azmq-breakpoint-xlarge, 1440px);
+
+/**
+ * @prop {String} keys
+ * @prop {Map} values
+ *
+ * - Keys are identifiers mapped to a given length
+ * - Values are actual breakpoints expressed in pixels
+**/
+
+$breakpoints: (
+    'x-small': 320px,
+    'small'  : 425px,
+    'medium' : 768px,
+    'large'  : 1024px,
+    'x-large': 1440px
+);
+
+/**
+ * @type Map
+ * @prop {String} keys
+ * @prop {Number} value
+ *
+ * - Layer's name
+ * - Z value mapped to the key
+ *
+ * Z-indexes map, gathering all Z layers of the application
+**/
+
+$z-indexes: (
+    'modal'   : 5000,
+    'dropdown': 4000,
+    'default' : 1,
+    'below'   : -1
+);
+
+$weights: (
+    'regular': 400,
+    'medium' : 500,
+    'bold'   : 700
+);
+
+
+$text-size-12: var(--azf-text-12, 12px);
+$text-size-14: var(--azf-text-14, 14px);
+
+
+$text-color-primary     : var(--azc-text-primary, #646464);
+$text-color-secondary   : var(--azc-text-secondary, #F3652B);
+$text-color-tertiary    : var(--azc-text-tertiary, #C8C8C8);
+
+$text-font-primary      : var(--azf-text-primary, ('Roboto', sans-serif));
+$text-font-secondary    : var(--azf-text-secondary, ('Titillium Web', sans-serif));
+$text-font-code-primary : var(--azf-text-code-primary, ('Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace));
