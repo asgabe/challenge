@@ -8,7 +8,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const cwd = process.cwd();
 
 
-gsass.compiler = require('node-sass');
+gsass.compiler = require('sass');
 
 
 function sassCompile() {
